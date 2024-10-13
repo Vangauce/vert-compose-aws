@@ -45,3 +45,15 @@ services:
       - .env.frontend
     depends_on:
       - api
+  pgadmin:
+    image: dpage/pgadmin4
+    ports:
+      - "80:80"
+    environment:
+      PGADMIN_DEFAULT_EMAIL: "J.E.Alvarez@outlook.es"
+      PGADMIN_DEFAULT_PASSWORD: "Eduardo1"
+    volumes:
+      - ./pgadmin:/var/lib/pgadmin
+      - ./pgadmin/servers.json:/pgadmin4/servers.json
+    depends_on:
+      - db
