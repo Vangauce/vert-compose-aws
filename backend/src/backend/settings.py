@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     "rest_framework_simplejwt",
     "drf_spectacular",
     "backend",
+    "monitoreo",
 ]
 
 ######################################################################
@@ -77,11 +78,11 @@ TEMPLATES = [
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
-        "USER": environ.get("DATABASE_USER", "postgres"),
-        "PASSWORD": environ.get("DATABASE_PASSWORD", "change-password"),
-        "NAME": environ.get("DATABASE_NAME", "db"),
-        "HOST": environ.get("DATABASE_HOST", "db"),
-        "PORT": "5432",
+        "USER": environ.get("DATABASE_USER"),
+        "PASSWORD": environ.get("DATABASE_PASSWORD"),
+        "NAME": environ.get("DATABASE_NAME"),
+        "HOST": environ.get("DATABASE_HOST"),
+        "PORT": environ.get("DATABASE_PORT"),
         "TEST": {
             "NAME": "test",
         },
