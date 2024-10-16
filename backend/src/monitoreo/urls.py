@@ -1,6 +1,6 @@
 from rest_framework.routers import DefaultRouter
 
-from monitoreo.views import ComunidadViewSet, DatosViewSet, KitViewSet, VertienteViewSet
+from monitoreo.api import ComunidadViewSet, DatosViewSet, KitViewSet, VertienteViewSet
 
 router = DefaultRouter()
 router.register(r"comunidades", ComunidadViewSet)

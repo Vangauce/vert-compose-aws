@@ -7,10 +7,14 @@ from rest_framework_simplejwt.views import (
     TokenRefreshView,
 )
 
+# Incluir las rutas de monitoreo en el enrutador principal
+from monitoreo.urls import router as monitoreo_router
+
 from .api import UserViewSet
 
 router = routers.DefaultRouter()
 router.register("users", UserViewSet, basename="api-users")
+router.registry.extend(monitoreo_router.registry)
 
 urlpatterns = [
     path(

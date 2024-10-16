@@ -10,6 +10,19 @@ from .models import User
 admin.site.unregister(Group)
 
 
+"""
+This module registers the User model with the Django admin interface and customizes its admin interface.
+
+Classes:
+    UserAdmin: Custom admin interface for the User model.
+
+Attributes:
+    form (UserChangeForm): Form used to change user details.
+    add_form (UserCreationForm): Form used to create a new user.
+    change_password_form (AdminPasswordChangeForm): Form used to change a user's password.
+"""
+
+
 @admin.register(User)
 class UserAdmin(BaseUserAdmin, ModelAdmin):
     form = UserChangeForm
