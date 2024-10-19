@@ -9,6 +9,7 @@ from rest_framework import mixins, status, viewsets
 from rest_framework.decorators import action
 from rest_framework.permissions import AllowAny, IsAuthenticated
 from rest_framework.response import Response
+from rest_framework_simplejwt.tokens import RefreshToken
 
 from .serializers import (
     UserChangePasswordErrorSerializer,
@@ -22,8 +23,12 @@ from .serializers import (
 # Obtiene el modelo de usuario configurado en el proyecto
 User = get_user_model()
 
+
 # Define un conjunto de vistas para la gestión de usuarios
-class UserViewSet(mixins.CreateModelMixin,viewsets.GenericViewSet,):
+class UserViewSet(
+    mixins.CreateModelMixin,
+    viewsets.GenericViewSet,
+):
     # Define el queryset y el serializador por defecto
     queryset = User.objects.all()
     serializer_class = UserCurrentSerializer
@@ -113,3 +118,17 @@ class UserViewSet(mixins.CreateModelMixin,viewsets.GenericViewSet,):
         # Elimina el usuario actual
         self.request.user.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
+
+    # Define la acción para cerrar sesión
+    @action(
+        ["post"], url_path="logout", detail=False, permission_classes=[IsAuthenticated]
+    )
+    def logout(self, request, *args, **kwargs):
+        try:
+            refresh_token = request.data["refresh_token"]
+            token = RefreshToken(refresh_token)
+            token.blacklist()
+
+            return Response(status=status.HTTP_205_RESET_CONTENT)
+        except Exception as e:
+            return Response(status=status.HTTP_400_BAD_REQUEST)

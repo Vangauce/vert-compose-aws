@@ -89,7 +89,20 @@ class UserCreateSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = User
-        fields = ["username", "password", "password_retype"]
+        fields = [
+            "username",
+            "password",
+            "password_retype",
+            "email",
+            "first_name",
+            "last_name",
+            "tipo",
+            "edad",
+            "comunidad",
+            "gender",
+            "phone",
+        ]
+        extra_kwargs = {"password": {"write_only": True}}
 
     def validate(self, attrs):
         password_retype = attrs.pop("password_retype")
