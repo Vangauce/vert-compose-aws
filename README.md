@@ -1,6 +1,6 @@
-# Turbo - Django & Next.js boilerplate <!-- omit from toc -->
+# Vertientes - Django & Next.js boilerplate <!-- omit from toc -->
 
-Turbo is a simple bootstrap template for Django and Next.js, combining both frameworks under one monorepository, including best practices.
+Vertientes template for Django and Next.js, combining both frameworks under one monorepository, including best practices.
 
 ## Features <!-- omit from toc -->
 
