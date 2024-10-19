@@ -1,6 +1,6 @@
-# Turbo - Django & Next.js boilerplate <!-- omit from toc -->
+# Vertientes - Django & Next.js boilerplate <!-- omit from toc -->
 
-Turbo is a simple bootstrap template for Django and Next.js, combining both frameworks under one monorepository, including best practices.
+Vertientes template for Django and Next.js, combining both frameworks under one monorepository, including best practices.
 
 ## Features <!-- omit from toc -->
 
@@ -42,7 +42,7 @@ Turbo is a simple bootstrap template for Django and Next.js, combining both fram
 To start using Turbo, it is needed to clone the repository to your local machine and then run docker-compose, which will take care about the installation process. The only prerequisite for starting Turbo template is to have docker-compose installed and preconfiguring files with environment variables.
 
 ```bash
-git clone https://github.com/unfoldadmin/turbo.git
+git clone https://github.com/YisusCL22/Vertientes-DJango-API-Next.js.git
 cd turbo
 ```
 
