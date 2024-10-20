@@ -8,9 +8,28 @@ import './globals.css'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Turbo - Django & Next.js Bootstrap Template'
+  title: 'AquaCircuit - Django & Next.js Bootstrap Template'
 }
 
+/**
+ * Componente de diseño raíz que envuelve toda la aplicación.
+ * 
+ * @param {Object} props - Propiedades del componente.
+ * @param {React.ReactNode} props.children - Elementos secundarios que se renderizarán dentro del diseño.
+ * 
+ * @returns {JSX.Element} - Elemento JSX que representa el diseño raíz de la aplicación.
+ * 
+ * @remarks
+ * Este componente establece la estructura básica de la aplicación, incluyendo la configuración del idioma,
+ * la clase CSS para el cuerpo del documento y el proveedor de autenticación.
+ * 
+ * @example
+ * ```tsx
+ * <RootLayout>
+ *   <YourComponent />
+ * </RootLayout>
+ * ```
+ */
 const RootLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <html lang="en">

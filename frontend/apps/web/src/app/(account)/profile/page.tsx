@@ -6,9 +6,15 @@ import { Metadata } from 'next'
 import { getServerSession } from 'next-auth'
 
 export const metadata: Metadata = {
-  title: 'Profile - Turbo'
+  title: 'Profile - AquaCircuit'
 }
 
+/**
+ * Componente de perfil que obtiene la sesión del servidor y el cliente de la API,
+ * y luego renderiza el formulario de perfil con los datos del usuario actual.
+ *
+ * @returns {JSX.Element} El formulario de perfil con los datos del usuario actual.
+ */
 const Profile = async () => {
   const session = await getServerSession(authOptions)
   const apiClient = await getApiClient(session)

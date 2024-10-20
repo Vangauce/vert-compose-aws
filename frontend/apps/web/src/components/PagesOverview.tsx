@@ -25,6 +25,22 @@ const SignOutLink: React.FC = () => {
   )
 }
 
+/**
+ * `PagesOverview` es un componente funcional de React que renderiza una lista de enlaces
+ * a diferentes páginas de la aplicación, categorizadas en "Authenticated pages" y "Anonymous pages".
+ * 
+ * - "Authenticated pages" incluye enlaces a páginas que requieren autenticación del usuario:
+ *   - Perfil
+ *   - Cambiar contraseña
+ *   - Eliminar cuenta
+ * 
+ * - "Anonymous pages" incluye enlaces a páginas accesibles sin autenticación:
+ *   - Iniciar sesión
+ *   - Registrarse
+ *   - Cerrar sesión
+ * 
+ * @returns Un elemento JSX que representa la vista general de las páginas.
+ */
 const PagesOverview: React.FC = () => {
   return (
     <ul className="flex flex-col gap-6">

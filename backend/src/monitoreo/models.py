@@ -1,6 +1,5 @@
 from django.db import models
 
-
 # Define el modelo comunidad
 class Comunidad(models.Model):
     nombre = models.CharField(
@@ -30,7 +29,6 @@ class Comunidad(models.Model):
         db_table = "comunidad"  # Nombre de la tabla en la base de datos
         ordering = ["id"]  # Ordenamiento por defecto
 
-
 # Define el modelo vertiente
 class Vertiente(models.Model):
     nombre = models.CharField(
@@ -58,7 +56,6 @@ class Vertiente(models.Model):
         db_table = "vertiente"  # Nombre de la tabla en la base de datos
         ordering = ["id"]  # Ordenamiento por defecto
 
-
 # Define el modelo kit
 class Kit(models.Model):
     modelo = models.IntegerField(default=0)  # Modelo del kit
@@ -83,7 +80,6 @@ class Kit(models.Model):
         verbose_name_plural = "Kits"  # Nombre plural del modelo
         db_table = "Kit"  # Nombre de la tabla en la base de datos
         ordering = ["id"]  # Ordenamiento por defecto
-
 
 # Define el modelo datos
 class Datos(models.Model):

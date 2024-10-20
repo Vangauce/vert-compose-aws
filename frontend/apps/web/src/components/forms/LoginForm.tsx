@@ -14,6 +14,34 @@ import ErrorMessage from '@frontend/ui/messages/ErrorMessage'
 
 type LoginFormSchema = z.infer<typeof loginFormSchema>
 
+/**
+ * Componente `LoginForm` que representa un formulario de inicio de sesión.
+ * Utiliza `react-hook-form` para el manejo de formularios y validación con `zod`.
+ * 
+ * @returns {React.FC} El componente de formulario de inicio de sesión.
+ * 
+ * @remarks
+ * - El formulario incluye campos para el nombre de usuario y la contraseña.
+ * - Utiliza `signIn` de `next-auth` para manejar la autenticación.
+ * - Muestra un mensaje de error si hay un error de inicio de sesión con credenciales.
+ * 
+ * @component
+ * 
+ * @example
+ * ```tsx
+ * <LoginForm />
+ * ```
+ * 
+ * @dependencies
+ * - `useSearchParams` para obtener los parámetros de búsqueda de la URL.
+ * - `useForm` de `react-hook-form` para manejar el estado del formulario y la validación.
+ * - `zodResolver` para integrar `zod` con `react-hook-form`.
+ * - `signIn` de `next-auth` para manejar la autenticación.
+ * 
+ * @see {@link https://react-hook-form.com/} para más información sobre `react-hook-form`.
+ * @see {@link https://github.com/colinhacks/zod} para más información sobre `zod`.
+ * @see {@link https://next-auth.js.org/getting-started/introduction} para más información sobre `next-auth`.
+ */
 const LoginForm: React.FC = () => {
   const search = useSearchParams()
 
@@ -32,7 +60,7 @@ const LoginForm: React.FC = () => {
   return (
     <>
       <FormHeader
-        title="Welcome back to Turbo"
+        title="Welcome back to AquaCircuit"
         description="Get an access to internal application"
       />
 

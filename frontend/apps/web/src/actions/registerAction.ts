@@ -11,6 +11,14 @@ export type RegisterAction = (
   data: RegisterFormSchema
 ) => Promise<UserCreateError | boolean>
 
+/**
+ * Registra una nueva acción de usuario.
+ *
+ * @param data - Los datos necesarios para registrar un nuevo usuario.
+ * @returns `true` si el registro es exitoso, un `UserCreateError` si ocurre un error de la API, o `false` para otros errores.
+ *
+ * @throws {ApiError} - Si ocurre un error durante la creación del usuario.
+ */
 const registerAction: RegisterAction = async (data) => {
   try {
     const apiClient = await getApiClient()

@@ -13,6 +13,16 @@ export type ProfileAction = (
   data: ProfileFormSchema
 ) => Promise<boolean | UserCurrentError>
 
+/**
+ * Realiza una acción de perfil utilizando los datos proporcionados.
+ * 
+ * @param data - Un objeto que contiene la información del perfil del usuario.
+ * @returns Una promesa que resuelve a `true` si la actualización fue exitosa,
+ *          un objeto `UserCurrentError` si hubo un error de la API,
+ *          o `false` si ocurrió otro tipo de error.
+ * 
+ * @throws ApiError - Si ocurre un error durante la actualización del perfil.
+ */
 const profileAction: ProfileAction = async (data) => {
   const session = await getServerSession(authOptions)
 

@@ -18,6 +18,34 @@ type ChangePasswordProps = {
   onSubmitHandler: ChangePasswordAction
 }
 
+/**
+ * Componente `ChangePasswordForm` que representa un formulario para cambiar la contraseña de una cuenta.
+ * 
+ * @param {ChangePasswordProps} props - Propiedades del componente.
+ * @param {Function} props.onSubmitHandler - Función que maneja el envío del formulario.
+ * 
+ * @returns {React.FC} - Componente funcional de React.
+ * 
+ * @description
+ * Este componente renderiza un formulario que permite a los usuarios cambiar su contraseña.
+ * Utiliza `useForm` de `react-hook-form` con un esquema de validación de `zod`.
+ * 
+ * @example
+ * ```tsx
+ * <ChangePasswordForm onSubmitHandler={handlePasswordChange} />
+ * ```
+ * 
+ * @component
+ * 
+ * @remarks
+ * - Muestra un mensaje de éxito si la contraseña se cambia correctamente.
+ * - Maneja errores de campo y los muestra en el formulario.
+ * - Resetea el formulario después de un cambio de contraseña exitoso.
+ * 
+ * @todo
+ * - Mejorar la validación de contraseñas.
+ * - Añadir más estilos al formulario.
+ */
 const ChangePaswordForm: React.FC<ChangePasswordProps> = ({
   onSubmitHandler
 }) => {

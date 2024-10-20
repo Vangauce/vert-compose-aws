@@ -12,6 +12,45 @@ type TextFieldProps = {
   formState: FormState<any>
 }
 
+/**
+ * TextField Component
+ *
+ * Este componente renderiza un campo de texto con un label y maneja la validación de errores.
+ * Es utilizado en formularios para capturar entradas de texto del usuario.
+ *
+ * @component
+ * @param {Object} props - Propiedades que recibe el componente.
+ * @param {string} props.type - El tipo de input (e.g., "text", "password").
+ * @param {string} props.label - El texto del label asociado al input.
+ * @param {string} props.placeholder - El texto placeholder que se muestra en el input.
+ * @param {Object} props.register - El objeto de registro de react-hook-form para conectar el input con el formulario.
+ * @param {Object} props.formState - El estado del formulario de react-hook-form, utilizado para mostrar errores de validación.
+ *
+ * @example
+ * // Ejemplo de uso en un formulario
+ * import { useForm } from 'react-hook-form';
+ * 
+ * const MyForm = () => {
+ *   const { register, handleSubmit, formState } = useForm();
+ * 
+ *   const onSubmit = (data) => {
+ *     console.log(data);
+ *   };
+ * 
+ *   return (
+ *     <form onSubmit={handleSubmit(onSubmit)}>
+ *       <TextField
+ *         type="text"
+ *         label="Nombre"
+ *         placeholder="Ingresa tu nombre"
+ *         register={register('nombre', { required: 'Este campo es obligatorio' })}
+ *         formState={formState}
+ *       />
+ *       <button type="submit">Enviar</button>
+ *     </form>
+ *   );
+ * };
+ */
 const TextField: React.FC<TextFieldProps> = ({
   type,
   label,

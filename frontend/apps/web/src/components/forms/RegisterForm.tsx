@@ -7,10 +7,30 @@ import SubmitField from '@frontend/ui/forms/SubmitField'
 import TextField from '@frontend/ui/forms/TextField'
 import FormHeader from '@frontend/ui/forms/FormHeader'
 import FormFooter from '@frontend/ui/forms/FormFooter'
-import { zodResolver } from '@hookform/resolvers/zod'
+import { zodResolver } from '@hookform/resolvers/zod' // Importa zodResolver para integrar validaciones de Zod con React Hook Form
 import { signIn } from 'next-auth/react'
 import { useForm } from 'react-hook-form'
 
+/**
+ * Componente de formulario de registro.
+ *
+ * @component
+ * @param {Object} props - Propiedades del componente.
+ * @param {RegisterAction} props.onSubmitHandler - Función que maneja el evento de envío del formulario.
+ *
+ * @returns {JSX.Element} El formulario de registro.
+ *
+ * Este componente renderiza un formulario para crear una nueva cuenta en AquaCircuit.
+ * Utiliza `useForm` de `react-hook-form` con un validador de esquema Zod.
+ * 
+ * El formulario incluye campos para nombre de usuario, contraseña y verificación de contraseña.
+ * Al enviar el formulario, se llama a `onSubmitHandler` con los datos del formulario.
+ * Si la respuesta es `true`, se inicia sesión automáticamente.
+ * Si la respuesta no es un booleano, se muestran errores en los campos correspondientes.
+ *
+ * @example
+ * <RegisterForm onSubmitHandler={handleRegister} />
+ */
 const RegisterForm: React.FC<{
   onSubmitHandler: RegisterAction
 }> = ({ onSubmitHandler }) => {
@@ -22,7 +42,7 @@ const RegisterForm: React.FC<{
   return (
     <>
       <FormHeader
-        title="Create new account in Turbo"
+        title="Create new account in AquaCircuit"
         description="Get an access to internal application"
       />
 
