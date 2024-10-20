@@ -1,5 +1,6 @@
 import PagesOverview from '@/components/PagesOverview'
 import UserSession from '@/components/UserSession'
+import Navbar from '../components/Navbar/Navbar'
 
 /**
  * Componente principal de la página de inicio.
