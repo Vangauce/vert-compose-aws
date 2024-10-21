@@ -1,0 +1,102 @@
+/* src/components/Footer.css */
+.footer {
+    background-color: #333;
+    color: #f0f0f0;
+    padding: 40px 20px;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.footer__nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.nav-col {
+    flex: 1;
+    min-width: 200px;
+    margin: 20px 0;
+}
+
+.nav-col h5 {
+    font-size: 16px;
+    margin-bottom: 15px;
+    color: #fff;
+}
+
+.nav-col ul {
+    list-style: none;
+    padding: 0;
+}
+
+.nav-col ul li {
+    margin-bottom: 10px;
+}
+
+.nav-col ul li a {
+    color: #f0f0f0;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.nav-col ul li a:hover {
+    color: #3498db;
+}
+
+/* Ajustes en la sección de redes sociales */
+.r-social {
+    display: flex;
+    justify-content: flex-start; /* Alineación a la izquierda */
+    gap: 10px; /* Espacio entre los íconos */
+    margin-bottom: 20px;
+}
+
+.r-social a {
+    color: #f0f0f0;
+    font-size: 24px; /* Aumento del tamaño de los íconos */
+    transition: color 0.3s;
+}
+
+.r-social a:hover {
+    color: #3498db;
+}
+
+.footer-certifications {
+    margin: 20px 0;
+    text-align: center;
+}
+
+.list-certificate {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    padding: 0;
+    list-style: none;
+}
+
+.list-certificate li {
+    flex: 1;
+    min-width: 200px;
+    margin: 10px;
+}
+
+.footer-bottom {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.footer-bottom p {
+    margin: 0;
+    color: #ccc;
+}
+
+.footer-bottom p a {
+    color: #f0f0f0;
+    text-decoration: none;
+}
+
+.footer-bottom p a:hover {
+    color: #3498db;
+}
